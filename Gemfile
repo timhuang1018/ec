@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
     gem 'byebug', platform: :mri
-    gem 'sqlite3'
+    gem 'pg'
   end
 
   group :production do
