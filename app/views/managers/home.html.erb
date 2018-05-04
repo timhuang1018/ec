@@ -1,13 +1,26 @@
 <h1>EC is down here</h1>
+<p>User</p>
 <% if user_signed_in? %>
   <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+   <%= link_to 'Ready to shop', products_path %>
+   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
   </li>
 <% else %>
   <li>
-  <%= link_to 'Sign up', new_user_registration_path %>
-  <%= link_to('Login', new_user_session_path)  %>  
+   <%= link_to 'Sign up', new_user_registration_path %>
+   <%= link_to('Login', new_user_session_path)  %>  
   </li>
 <% end %>
-
-
+<p>Member</p>
+<% if member_signed_in? %>
+  <li>
+   <%= link_to 'Manage User', users_path %>
+   <%= link_to 'Manage Product', products_path %>
+   <%= link_to('Logout', destroy_member_session_path, method: :delete) %>      
+  </li>
+<% else %>
+  <li>
+   <%= link_to 'Sign up', new_member_registration_path %>
+   <%= link_to('Login', new_member_session_path)  %>  
+  </li>
+<% end %>

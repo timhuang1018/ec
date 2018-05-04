@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :members
   devise_for :users
+  resources :users
   resource :mains
   resources :managers
   resources :products

@@ -1,0 +1,8 @@
+<ul>
+	<% @products.each do |pd| %>
+	<li>
+		<%= pd.name %>
+		<%= link_to 'See description', product_path(pd) %>
+	</li>
+	<% end %>
+</ul>
