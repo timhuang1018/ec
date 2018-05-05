@@ -18,6 +18,16 @@ before_action :set_product, :only => [ :show, :edit, :update, :destroy]
 
 		redirect_to products_url
 	end
+	def new
+		@product = Product.new
+	end
+	def create
+		@product = Product.new(product_params)
+		@product.save
+
+		redirect_to products_url
+	end
+
 
 	private
 	def set_product
