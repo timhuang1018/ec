@@ -5,7 +5,19 @@ before_action :set_product, :only => [ :show, :edit, :update, :destroy]
 	end
 	def show
 	end
+	def edit
+	end
+	def update
+		@product = Product.find(params[:id])
+		@product.update(product_params)
 
+		redirect_to product_url(@product)
+	end
+	def destroy
+		@product.destroy
+
+		redirect_to products_url
+	end
 
 	private
 	def set_product

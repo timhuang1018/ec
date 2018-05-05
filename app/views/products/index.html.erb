@@ -3,6 +3,16 @@
 	<li>
 		<%= pd.name %>
 		<%= link_to 'See description', product_path(pd) %>
+	<% if member_signed_in? %>
+ 		<%= link_to 'Edit', edit_product_path(pd) %>
+		<%= link_to 'Delete', product_path(pd), :method => :delete, :data => { :confirm => 'Are you suer?'} %>    	
+	<% end %>
 	</li>
 	<% end %>
 </ul>
+	<% if member_signed_in? %>
+		<%= link_to 'Create new product', new_user_path %>  	
+	<% end %>
+<br><br>
+
+<%= link_to 'Back to main page', root_url %>
