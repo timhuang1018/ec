@@ -1,5 +1,7 @@
-<%= @product.name %>
-<p><%= (@product.price) %></p>
+<p>Name : <%= @product.name %></p>
+<p> Price : <%= (@product.price) %></p>
 <%= simple_format(@product.description) %>
+
+<p> It's in category : <%= @product.category.name %></p> 
 
 <p><%= link_to 'Back to index', products_path %></p>

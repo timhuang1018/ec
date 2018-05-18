@@ -1,9 +1,11 @@
-<%= form_for @user, :url => user_path(@user), :method => :patch do |f| %>
+<%= form_for @user, :url => uniuser_path(@user), :method => :patch do |f| %>
     <%= f.label :email, "Email" %>
     <%= f.text_field :email %>
 
     <%= f.label :password, "Password" %>
     <%= f.text_area :password %>
+
+
 
     <%= f.submit "Update" %>
 <% end %>

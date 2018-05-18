@@ -1,0 +1,14 @@
+<ul>
+<% @users.each do |u| %>
+<li>
+	<%= u.email %>
+	<%= link_to 'Show', uniuser_path(u) %>
+	<%= link_to 'Edit', edit_uniuser_path(u) %>
+	<%= button_to 'Delete', uniuser_path(u), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+</li>
+<% end %>
+</ul>
+
+<%= link_to 'Generate new user', new_uniuser_path %><br><br>
+
+<%= link_to 'Back to main page', root_url %>

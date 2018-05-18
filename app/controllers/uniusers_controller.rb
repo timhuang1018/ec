@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UniusersController < ApplicationController
 	before_action :set_user, :only => [ :show, :edit, :update, :destroy]
 	def index
 		@users = User.all
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		@user.save
 
-		redirect_to users_url
+		redirect_to uniusers_path
 	end
 	def show
 	end
@@ -20,11 +20,11 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.update(user_params)
 
-		redirect_to user_url(@user)
+		redirect_to uniuser_url(@user)
 	end
 	def destroy
 		@user.destroy
-		redirect_to users_url
+		redirect_to uniusers_url
 	end
 
 
