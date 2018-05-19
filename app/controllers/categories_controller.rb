@@ -1,9 +1,12 @@
 class CategoriesController < ApplicationController
 	before_action :set_category, :only => [:show, :edit, :update, :destroy]
+
 	def index
 		@categories = Category.all
+
 	end
 	def show
+		@need_products = @category.products
 	end
 	def edit		
 	end
@@ -31,8 +34,15 @@ class CategoriesController < ApplicationController
 	private
 	def set_category
 		@category = Category.find(params[:id])
+		@category_products = Product.all
 	end
 	def category_params
 		params.require(:category).permit(:name)
 	end
+	def product_params
+	  params.require(:product).permit(:name, :description, :price, :category_id)
+	end
+
+	protected
+
 end

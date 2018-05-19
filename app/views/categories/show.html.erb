@@ -1,3 +1,19 @@
 <%= @category.name %><br>
 
+
+		<% @need_products.each do |cp| %>
+	<li>
+
+		<%= cp.name %>
+		<%= form_for cp, :url => product_path(cp), :method => :patch do |f| %>
+		<%= f.collection_select(:category_id, Category.all, :id, :name) %>
+
+		<%= f.submit "Change" %>
+		<% end %>
+	</li>
+		<% end %>
+
+
+
+
 <%= link_to 'Back to manage category', categories_path %>
