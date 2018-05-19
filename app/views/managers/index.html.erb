@@ -1,7 +1,40 @@
+<h1>EC is down here</h1>
 
 <% if user_signed_in? %>
-  <li>
-  <%= link_to 'Ready to shop', products_path %>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+	<p>You Are The User</p>
+<table>
+  <tr>
+   - <%= link_to 'Ready to shop', products_path %>
+  </tr>
+  <br>
+  <br>
+  <tr>
+   - <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  </tr>
+   <br>
+  <br>
+  <tr>
+   - <%= link_to('Check the date', show_date_path) %>
+  </tr>
+
+</table>
+<% end %>
+
+<% if member_signed_in? %>
+	<p>You Are The Member</p>
+  	<li>
+   <%= link_to 'Manage User', uniusers_path %>
+	</li>
+	<br>
+	<li>
+   <%= link_to 'Manage Product', products_path %>
+   	</li>
+   	<br>
+	<li>
+   <%= link_to 'Manage Category', categories_path %>
+    </li>
+    <br>
+	<li>
+   <%= link_to('Logout', destroy_member_session_path, method: :delete) %>      
   </li>
 <% end %>

@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   	resources :products, :controller => 'categories'
   end
   root :to => "managers#home"
+  get '/show_date' => 'managers#show_date', :as => "show_date"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

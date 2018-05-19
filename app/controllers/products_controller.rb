@@ -24,6 +24,7 @@ before_action :set_product, :only => [ :show, :edit, :update, :destroy]
 	def create
 		@product = Product.new(product_params)
 		@product.save
+		flash[:notice] = "Product was successfully created"
 
 		redirect_to products_url
 	end

@@ -5,4 +5,12 @@ class ManagersController < ApplicationController
 	end
 	def create
 	end
+	def show_date
+		@b = Time.now
+	    @a = 0
+	end
+	def update
+		@b = @b + @a.days 
+
+	end
 end

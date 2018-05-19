@@ -1,0 +1,10 @@
+<h1><%= Time.now.to_s %></h1>
+
+<% @a = 0 %>
+
+<%= form_for @a, :url => show_date_path(@a), :method => :patch do |f| %>
+    <%= f.label :days, "Days to add" %>
+    <%= f.text_field :days %>
+
+<%= f.submit "Update" %>
+<% end %>
