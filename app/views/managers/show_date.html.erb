@@ -1,10 +1,39 @@
-<h1><%= Time.now.to_s %></h1>
+<body>
+<% a = Time.now.to_s %>
+<h1><%= a %></h1>
 
-<% @a = 0 %>
+<div>
+	How many days after today : <input type= "number" id = "myInput">
+</div><br>
 
-<%= form_for @a, :url => show_date_path(@a), :method => :patch do |f| %>
-    <%= f.label :days, "Days to add" %>
-    <%= f.text_field :days %>
+<button id = "CountDays">Count the days!</button><br>
 
-<%= f.submit "Update" %>
-<% end %>
+	<h1>It's going to be : <div id = "afterCount"></div></h1>
+
+<div>
+	
+</div>
+
+</body>
+<script>
+	var moreDay = new Date();
+
+	function addDay(y) {
+
+
+		moreDay.setDate(moreDay.getDate()+ y );
+		return moreDay
+	}	
+
+
+	document.getElementById("CountDays").onclick = function () {
+
+	var InputDays = document.getElementById("myInput").value;
+	var y = InputDays.toString()	
+		parseInt(y)
+		alert(y);
+		document.getElementById("afterCount").innerHTML = addDay(y);
+		}
+
+
+</script>
