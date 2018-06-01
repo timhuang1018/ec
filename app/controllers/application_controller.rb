@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
   		p a  		
   		managers_path #your path
 	end
+
 end
