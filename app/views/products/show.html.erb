@@ -4,4 +4,10 @@
 
 <p> It's in category : <%= @product.category.name %></p> 
 
+	<% if user_signed_in? %>
+	
+		<%= link_to '放到購物車', add_cart_path(@product) %>
+	<% end %>
+
+
 <p><%= link_to 'Back to index', products_path %></p>

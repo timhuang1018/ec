@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   devise_for :members
   devise_for :users
   resources :uniusers
@@ -13,6 +12,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get"/", to: "pages#hello"
+  resources :cart, only:[:show, :destroy] do
+    collection do
+      post :add, path:'add/:id'
+    end
+  end
 
 end
