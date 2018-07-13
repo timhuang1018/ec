@@ -1,12 +1,18 @@
 <p>Name : <%= @product.name %></p>
 <p> Price : <%= (@product.price) %></p>
-<%= simple_format(@product.description) %>
+<p>說明: <%= (@product.description) %><p>
 
-<p> It's in category : <%= @product.category.name %></p> 
+<p>分類: <%= @product.category.name %></p> 
 
 	<% if user_signed_in? %>
+		<p>現有數量: <%= @product.quantity %></p> 	
+		<%= link_to '放到購物車', add_cart_path(@product), method: :post %>
+	<% end %>
+
+	<% if member_signed_in? %>
 	
-		<%= link_to '放到購物車', add_cart_path(@product) %>
+		<p>現有庫存量: <%= @product.in_stocks %></p>
+		<p>安全存量: <%= @product.safety_stocks %></p>
 	<% end %>
 
 

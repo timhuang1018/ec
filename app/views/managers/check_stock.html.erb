@@ -1,0 +1,11 @@
+<%= form_tag update_stock_path(@products), :method => :patch do %>
+
+	<% @products.each do |product| %>
+		<h3>商品名稱: <%= product.name %></h3>
+		<p>庫存: <%= product.in_stocks %>, 安全存量: <%= product.safety_stocks %>,	
+ 		 增加數量:<%= text_field_tag "add_number[#{product.id}]" %> </p>
+	<% end %>
+	<%= submit_tag "補貨" %>
+<% end %>
+
+<%= link_to 'Back to main page', managers_path %>

@@ -6,7 +6,7 @@
 	
 	<% if user_signed_in? %>
 	
-		<%= link_to '放到購物車', add_cart_path(pd) %>
+		<%= link_to '放到購物車', add_cart_path(pd), method: :post %>
 	<% end %>
 
 	<% if member_signed_in? %>
@@ -18,6 +18,10 @@
 </ul>
 	<% if member_signed_in? %>
 		<%= link_to 'Create new product', new_product_path %>  	
+	<% end %>
+	<% if user_signed_in? %>
+	
+		<%= link_to '檢查購物車', managers_path %>
 	<% end %>
 <br><br>
 

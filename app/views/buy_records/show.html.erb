@@ -1,0 +1,24 @@
+<table style= "border: 2px double blue" rules="all">
+
+  <thead>
+    <tr>
+      <td>商品名稱</td>
+      <td>數量</td>
+      <td>單價</td>
+      <td>小計</td>
+    </tr>
+  </thead>  
+<br>
+  <tbody>
+    <% @cart_details.each do |c| %>
+    <tr>
+      <td><%= c.product_name %></td>
+      <td><%= c.quantity %></td>
+      <td><%= c.unit_price %></td>
+      <td><%= c.product_subtal %></td>
+    </tr><br>
+    <% end %>
+     <br>
+  </tbody>
+
+  </table>

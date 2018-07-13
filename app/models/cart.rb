@@ -2,7 +2,7 @@ class Cart
 	attr_reader :items
 
 	def initialize(items = [])
-		@item = items
+		@items = items
 	end
 
 	def add_item(product_id)
@@ -12,13 +12,14 @@ class Cart
 			found_item.increment
 		else
 		@items << CartItem.new(product_id)
+		end
 	end
 
 	def empty?
-		@items.empty
+		@items.empty?
 	end
 
-	def price_total
+	def total_price
 		items.reduce(0) { |sum, item| sum + item.price }
 	end
 
@@ -28,18 +29,18 @@ class Cart
 			{ "product_id" => item.product_id, "quantity" => item.quantity }
 		}
 
-		{ "items" => all_items}
+		{ "items" => all_items }
 	end
 
 	def self.from_hash(hash)
 		if hash.nil?
-			new[]
+			new []
 		else
-			new hash["items"].map { |hash|
+			new hash["items"].map { |item_hash|
 
 				CartItem.new(item_hash["product_id"], item_hash["quantity"])
 			}
 		end
 	end
-	
+
 end

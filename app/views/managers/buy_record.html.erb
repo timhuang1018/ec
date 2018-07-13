@@ -1,0 +1,24 @@
+<style>
+	p { margin: 0px; }
+</style>
+
+<ol>
+	<% @buyrecords.each do |b| %>
+		<% if b.user_id = current_user.id %>
+	<li>
+		<p>使用者姓名: <%= b.user_name %></p>
+		<p>購買總價: <%= b.total_price %>
+		<p>購買日期: <%= b.created_at.to_date %></p>
+		<%= link_to '詳細內容', buy_record_path(b) %>
+	</li>
+		<% else return b %>
+		<% end %>
+
+	<% end %>
+
+
+</ol>
+
+
+
+<%= link_to '回到個人首頁', managers_path %>
