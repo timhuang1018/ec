@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180711071305) do
+ActiveRecord::Schema.define(version: 20180714033711) do
 
   create_table "cart_details", force: :cascade do |t|
     t.string "product_name"
@@ -70,6 +70,28 @@ ActiveRecord::Schema.define(version: 20180711071305) do
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["in_stocks"], name: "index_products_on_in_stocks"
     t.index ["safety_stocks"], name: "index_products_on_safety_stocks"
+  end
+
+  create_table "replenish_details", force: :cascade do |t|
+    t.string "product_name"
+    t.integer "amount"
+    t.integer "after_instock"
+    t.integer "unit_price"
+    t.integer "subtal_price"
+    t.integer "unit_weight"
+    t.integer "subtal_weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "replenish_id"
+    t.index ["replenish_id"], name: "index_replenish_details_on_replenish_id"
+  end
+
+  create_table "replenishes", force: :cascade do |t|
+    t.string "name"
+    t.integer "total_weight"
+    t.integer "freight_fee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

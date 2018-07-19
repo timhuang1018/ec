@@ -1,0 +1,2 @@
+class ReplenishDetail < ApplicationRecord
+end

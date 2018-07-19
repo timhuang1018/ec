@@ -16,6 +16,7 @@ before_action :set_product, :only => [ :show, :edit, :update, :destroy]
 	def destroy
 		@product.destroy
 
+		flash[:warning] = "Product was destroyed!"
 		redirect_to products_url
 	end
 	def new

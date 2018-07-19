@@ -26,8 +26,11 @@ class ManagersController < ApplicationController
 		#in_stock 個別增加管理者輸入之值,save個別儲存
 		@products.each do |product|
 			params[:add_number].each do |key,value|
-				if key = product.id
-				product.in_stocks = product.in_stocks + value.to_i
+				puts product.id
+				puts key
+				puts value
+				if key.to_i == product.id
+				product.in_stocks += value.to_i
 				end
 			end
 			product.save
