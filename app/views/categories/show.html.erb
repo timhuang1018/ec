@@ -5,7 +5,8 @@
 	<li>
 
 		<%= cp.name %>
-		<%= form_for cp, :url => product_path(cp), :method => :patch do |f| %>
+		<%= form_for cp, :url => { :controller => 'categories', :action => 'product_update'} do |f| %>
+		<%= f.hidden_field :id %>
 		<%= f.collection_select(:category_id, Category.all, :id, :name) %>
 
 		<%= f.submit "Change" %>

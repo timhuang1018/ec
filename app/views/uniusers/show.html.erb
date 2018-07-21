@@ -1,6 +1,35 @@
+<div class="contaiiner">
+<h3>
 <%= @user.name %>
-<%= @user.email %>
+</h3>
 
-<p>user_id : <%= (@user.id) %> </p> 
+<p>Email : <%= @user.email %></p>
 
+<p>Id 	 : <%= (@user.id) %> </p> 
+
+<p>尚有虛擬幣: <%= @user.money %>$</p>
+
+<% if user_signed_in? %>
+
+<p>儲值虛擬幣:
+
+	<%= form_tag add_user_money_path, :method=>:patch do %>
+
+    	<%= text_field_tag "add_money" %>
+
+		<%= submit_tag "儲值" %>
+		<% end %></p>
+
+<%= link_to '回個人主頁', managers_path, :class => "btn btn-primary" %>
+
+
+
+<% end %>
+
+
+
+<% if member_signed_in? %>
 <p><%= link_to 'Back to index', uniusers_path %></p>
+
+<% end %>
+</div>

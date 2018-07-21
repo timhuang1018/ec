@@ -22,9 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-<<<<<<< HEAD
-=======
-=======
 # ec
->>>>>>> 04461642895c9675485fd192ab0da5fe95aef672
->>>>>>> origin/master
+

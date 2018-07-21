@@ -7,6 +7,12 @@ class CartsController < ApplicationController
 		redirect_to products_path, notice: "#{Product.find(params[:id]).name} 已加入購物車"
 	end
 	def destroy
+		puts "aaaaa"
+		p current_cart
+		p current_cart.items
+		p current_cart.total
+		current_user.money -= current_cart.total 
+		current_user.save
 		session[:cart9999] = nil
 
 		redirect_to products_path, notice: "購物車已清空"

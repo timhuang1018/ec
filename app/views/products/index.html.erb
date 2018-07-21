@@ -24,7 +24,7 @@
 	<% end %>
 	<% if user_signed_in? %>
 	
-		<%= link_to '檢查購物車', managers_path %>
+		<%= link_to '檢查購物車', managers_path, :class => "btn btn-info" %>
 	<% end %>
 <br><br>
-<%= link_to 'Back to main page', managers_path, :class => "btn btn-primary" %>
+<%= link_to '回個人主頁', managers_path, :class => "btn btn-primary" %>

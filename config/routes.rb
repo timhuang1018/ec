@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :buy_records
   root :to => "managers#home"
   get '/show_date' => 'managers#show_date', :as => "show_date"
+  patch 'product_update/:id' => 'categories#product_update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -26,4 +27,5 @@ Rails.application.routes.draw do
   post '/save_and_destroy' => 'carts#save_and_destroy'
   get '/check_stock' => 'managers#check_stock', :as => "check_stock"
   patch '/update_stock' => 'managers#update_stock', :as => "update_stock"
+  patch '/add_user_money' => 'uniusers#add_user_money', :as => "add_user_money"
 end

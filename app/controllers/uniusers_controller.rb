@@ -26,6 +26,14 @@ class UniusersController < ApplicationController
 		@user.destroy
 		redirect_to uniusers_url
 	end
+	def add_user_money
+		p current_user.money
+		amount = params["add_money"].to_s
+		p amount
+		current_user.money += amount.to_i
+		current_user.save
+		redirect_to managers_path
+	end
 
 
 private
@@ -33,6 +41,6 @@ private
   		@user = User.find(params[:id])
 	end
 	def user_params
-	  params.require(:user).permit(:name, :email, :password)
+	  params.require(:user).permit(:name, :email, :password, :money)
 	end
 end

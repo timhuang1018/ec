@@ -30,6 +30,13 @@ class CategoriesController < ApplicationController
 
 		redirect_to categories_path
 	end
+	def product_update
+		p params
+		@product = Product.find(params["product"][:id])
+		@product.update(product_params)
+
+		redirect_to categories_path
+	end
 
 	private
 	def set_category
@@ -40,7 +47,7 @@ class CategoriesController < ApplicationController
 		params.require(:category).permit(:name)
 	end
 	def product_params
-	  params.require(:product).permit(:name, :description, :price, :category_id)
+	  params.require(:product).permit(:name, :description, :price, :category_id, :id)
 	end
 
 	protected
