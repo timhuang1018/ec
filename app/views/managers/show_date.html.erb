@@ -20,7 +20,6 @@
 
 	function addDay(y) {
 
-		alert(moreDay.getDate())
 		moreDay.setDate(Number(moreDay.getDate())+ Number(y) );
 		return moreDay
 
@@ -30,7 +29,7 @@
 	document.getElementById("CountDays").onclick = function () {
 
 	var InputDays = document.getElementById("myInput").value;
-		alert(InputDays);
+
 		document.getElementById("afterCount").innerHTML = addDay(InputDays);
 		}
 
