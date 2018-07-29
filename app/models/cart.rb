@@ -21,7 +21,6 @@ class Cart
 
 	def total_price
 		items.reduce(0) { |sum, item| sum + item.price }
-		@total = items.reduce(0) { |sum, item| sum + item.price }
 	end
 
 	def serialize
@@ -29,8 +28,7 @@ class Cart
 
 			{ "product_id" => item.product_id, "quantity" => item.quantity }
 		}
-
-		{ "items" => all_items }
+		{ "items" => all_items, "total" => total }
 	end
 
 	def self.from_hash(hash)
