@@ -1,20 +1,8 @@
-<div class="container">
+
 <div style="margin-top:5px; text-align: center;">
 <h1>電蝦</h1>
 </div>
   <% if user_signed_in? %>
-  <div class="row">
-  <nav class="navbar navbar-expand-sm navbar-light bg-info">
-    <a class="navbar-brand col-md-3" href="#"><%= current_user.name%>的電蝦首頁</a>
-
-    <div class="col-md-9" id="navbarSupportedContent">
-        <div stlye="float:right;">Flex item 1</div>
-        <div class="p-2 bd-highlight"  stlye="float:right;">Flex item 2</div>
-        <div class="p-2 bd-highlight">Flex item 3</div>
-    
-  </div>
-  </nav>
-</div>
 
 <table class="table">
   <tr>
@@ -63,4 +51,4 @@
    <%= link_to('Logout', destroy_member_session_path, method: :delete) %>      
   </li>
 <% end %>
-</div>
+
