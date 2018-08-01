@@ -1,33 +1,12 @@
 <div class="container" style="width: 650px;">
   <% if user_signed_in? %>
-
-<table class="table">
-  <tr>
-   - <%= link_to 'Ready to shop', products_path %>
-  </tr>
-  <br>
-  <tr>
-   - <%= link_to 'Profile', uniuser_path(current_user) %>
-  </tr>
-  <br>
-  <tr>
-   - <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </tr>
-   <br>
-  <tr>
-   - <%= link_to('Check the date', show_date_path) %>
-  </tr>
-  <br>
-  <tr>
-   - <%= link_to('購物紀錄', buy_record_managers_path(current_user)) %>
-  </tr>
-</table>
-
-<% end %>
+    <h2><%= link_to 'Ready to shop', products_path %></h2>
+  <% end %>
 <%= render 'layouts/cart' %>
 
-<table class="table">
+
 <% if member_signed_in? %>
+<table class="table">
 	<tr>
     <h3>You Are The Member</h3></tr>
   <tr>

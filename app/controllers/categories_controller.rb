@@ -31,7 +31,6 @@ class CategoriesController < ApplicationController
 		redirect_to categories_path
 	end
 	def product_update
-		p params
 		@product = Product.find(params["product"][:id])
 		@product.update(product_params)
 
