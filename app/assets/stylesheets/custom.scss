@@ -160,7 +160,7 @@ aside {
 
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
-	width: 100%;
+	width: 60%;
 	margin-bottom: 15px;
 	@include box_sizing;
 }
@@ -182,4 +182,23 @@ input {
 	.form-control {
 		color: $state-danger-text;
 	}
+}
+
+.checkbox {
+	margin-top: -10px;
+	margin-bottom: 10px;
+	span {
+		margin-left: 20px;
+		font-weight: normal;
+	}
+}
+
+#user_remember_me {
+	width: auto;
+	margin-left: 0;
+}
+
+#member_remember_me {
+	width: auto;
+	margin-left: 0;
 }

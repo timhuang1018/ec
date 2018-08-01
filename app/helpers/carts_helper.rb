@@ -4,7 +4,7 @@ module CartsHelper
 	end
 
 	def has_cart?
-		!current_cart.nil?
+		!current_cart.items.empty?
 	end
 
 	def total

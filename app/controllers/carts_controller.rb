@@ -35,9 +35,6 @@ class CartsController < ApplicationController
 			current_user.save
 
 			session[:cart9999] = nil
-			render(
-        html: "<script>alert('已付款')</script>".html_safe,
-      )
 			redirect_to managers_path, notice: "已付款!於個人首頁查看訂單XXXX狀態" 
 		else
 			flash.now[:warning] = '餘額不足'

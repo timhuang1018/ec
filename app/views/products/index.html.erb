@@ -1,26 +1,22 @@
 <div class="container">
 	<h1>商品列表</h1>
-<table class="table">
+<table class="table" style="width: 600px;">
 	<% @products.each do |pd| %>
 	<tr>
-	<td><%= pd.name %></td>
-	<td><%= link_to 'See description', product_path(pd) %>
+	<td style="text-align: center"><%= pd.name %></td>
+	<td style="width:130px;"><%= link_to 'See description', product_path(pd) %></td>
 	<% if user_signed_in? %>
-	<%= link_to '放到購物車', add_cart_path(pd), method: :post %>
+	<td style="width:130px;"><%= link_to '放到購物車', add_cart_path(pd), method: :post %></td>
 	<% end %>
 
 	<% if member_signed_in? %>
- 		<%= link_to 'Edit', edit_product_path(pd) %>
-		<%= link_to 'Delete', product_path(pd), :method => :delete, :data => { :confirm => 'Are you suer?'} %><td>    	
+ 		<td style="width:80px;"><%= link_to 'Edit', edit_product_path(pd) %></td>
+		<td style="width:80px;"><%= link_to 'Delete', product_path(pd), :method => :delete, :data => { :confirm => 'Are you suer?'} %></td>    	
 	<% end %>
-	<td>
-	</tr>
 	<% end %>
 </table>
 	<% if member_signed_in? %>
-		<div class="btn">
 		<%= link_to 'Create new product', new_product_path %>
-		</div> 	
 	<% end %>
 	<% if user_signed_in? %>
 	

@@ -1,7 +1,4 @@
-
-<div style="margin-top:5px; text-align: center;">
-<h1>電蝦</h1>
-</div>
+<div class="container" style="width: 650px;">
   <% if user_signed_in? %>
 
 <table class="table">
@@ -24,31 +21,27 @@
   <tr>
    - <%= link_to('購物紀錄', buy_record_managers_path(current_user)) %>
   </tr>
-
 </table>
+
 <% end %>
 <%= render 'layouts/cart' %>
 
+<table class="table">
 <% if member_signed_in? %>
-	<p>You Are The Member</p>
-  	<li>
-   <%= link_to 'Manage User', uniusers_path %>
-	</li>
-	<br>
-	<li>
-   <%= link_to 'Manage Product', products_path %>
-   	</li>
-   	<br>
-	<li>
-   <%= link_to 'Manage Category', categories_path %>
-    </li>
-    <br>
-  <li>
-    <%= link_to '確認商品庫存', check_stock_path %>
-  </li>
-  <br>
-	<li>
-   <%= link_to('Logout', destroy_member_session_path, method: :delete) %>      
-  </li>
+	<tr>
+    <h3>You Are The Member</h3></tr>
+  <tr>
+    <th><%= link_to '管理使用者', uniusers_path %></th></tr>
+	<tr>
+    <th><%= link_to '管理商品', products_path %></th></tr>
+	<tr>
+    <th><%= link_to '管理商品類別', categories_path %></th></tr>
+  <tr>
+    <th><%= link_to '管理商品庫存', check_stock_path %></th></tr>
+	<tr>
+    <th><%= link_to('Logout', destroy_member_session_path, method: :delete) %></th></tr>
 <% end %>
 
+</table>
+
+</div>

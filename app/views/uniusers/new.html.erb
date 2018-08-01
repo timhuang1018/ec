@@ -1,12 +1,4 @@
 <%= form_for @user, :url => uniusers_url do |f| %>
-	<%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
-	<%= f.label :email, "Email" %>
-    <%= f.text_field :email %>
-    <%= f.label :password, "Password" %>
-    <%= f.text_area :password %>
-	<%= f.label :money, "Money" %>
-    <%= f.text_field :money %>
-
-    <%= f.submit "Create" %>
+	<%= render :partial => 'layouts/user', :locals => {:f => f} %>
+  <%= f.submit "Create" %>
 <% end %>

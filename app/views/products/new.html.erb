@@ -1,14 +1,6 @@
 <%= form_for @product, :url => products_path do |f| %>
-	<%= f.label :name, "Name" %>
-	<%= f.text_field :name %><br>
-	<%= f.label :description, "Description" %>
-	<%= f.text_area :description %><br>
-	<%= f.label :price, "Price" %>
-	<%= f.text_field :price %><br>
-	<%= f.label :in_stocks, "現有庫存量" %>
-	<%= f.text_field :in_stocks %><br>
-	<%= f.label :safety_stocks, "安全存貨" %>
-	<%= f.text_field :safety_stocks %><br>
+
+<%= render :partial => 'layouts/product', :locals => { :f => f} %>
 	
 <%= f.collection_select(:category_id, Category.all, :id, :name) %><br>
 

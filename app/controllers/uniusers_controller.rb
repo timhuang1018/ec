@@ -9,8 +9,8 @@ class UniusersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		@user.save
-
-		redirect_to uniusers_path
+		flash[:notice] = "會員資料已產生!"
+		redirect_to uniusers_path 
 	end
 	def show
 	end
@@ -24,6 +24,7 @@ class UniusersController < ApplicationController
 	end
 	def destroy
 		@user.destroy
+		flash[:warning] = "會員資料已刪除!"
 		redirect_to uniusers_url
 	end
 	def add_user_money

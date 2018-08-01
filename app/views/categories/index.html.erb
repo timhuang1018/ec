@@ -1,19 +1,16 @@
-<ul>
+<div class="container">
 	<% @categories.each do |c| %>
-	<li>
-		<%= c.name %>
-		<%= link_to 'Show', category_path(c) %>
-		<%= link_to 'Edit', edit_category_path(c) %>
-		<%= link_to 'Destroy', category_path(c), :method => :delete %>
-
-
-	</li>
-
+		<ul>
+			<li>
+				<span style="font-size: 1.5em;"><%= c.name %></span>
+				<%= link_to 'Show', category_path(c) %>
+				<%= link_to 'Edit', edit_category_path(c) %>
+				<%= link_to 'Destroy', category_path(c), :method => :delete %>		
+			</li>
+		</ul>
 	<% end %>
+</div>
 
-
-</ul>
 <%= link_to 'Generate new category', new_category_path %><br>
-
 
 <%= link_to 'Back to main page', managers_path %>
