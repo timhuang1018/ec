@@ -28,7 +28,7 @@ class Cart
 
 			{ "product_id" => item.product_id, "quantity" => item.quantity }
 		}
-		{ "items" => all_items, "total" => total }
+		{ "items" => all_items }
 	end
 
 	def self.from_hash(hash)
