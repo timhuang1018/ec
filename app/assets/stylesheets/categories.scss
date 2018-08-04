@@ -1,3 +1,21 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hide_container {
+    width:100%;
+    border:1px solid #d3d3d3;
+}
+.hide_container div {
+    width:100%;
+}
+.hide_container .slide_header {
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.hide_container .content {
+    display: none;
+    padding : 5px;
+}
