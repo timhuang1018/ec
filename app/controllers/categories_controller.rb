@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
 	def index
 		@categories = Category.all
+		@category = Category.new
 
 	end
 	def show
@@ -22,9 +23,15 @@ class CategoriesController < ApplicationController
 	def create
 		@category = Category.new(category_params)
 
-		@category.save
-		redirect_to categories_path
+		respond_to do |format|
+			if @category.save
+				format.html { redirect_to @category, notice: '成功產生新類別'}
+				format.js
+				format.json { render json: @category, status: :create, location: @category}
+			end
+		end
 	end
+	
 	def destroy
 		@category.destroy
 

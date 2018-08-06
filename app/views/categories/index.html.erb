@@ -1,33 +1,30 @@
 <div class="container">
-	<% @categories.each do |c| %>
-		<ul>
+
+	<ul id="categories">
+		<% @categories.each do |c| %>
 			<li>
-				<span style="font-size: 1.5em;"><%= c.name %></span>
-				<%= link_to 'Show', category_path(c) %>
-				<%= link_to 'Edit', edit_category_path(c) %>
-				<%= link_to 'Destroy', category_path(c), :method => :delete %>		
+			<%= render :partial => 'categories/category', :locals => { :c => c} %>		
 			</li>
-		</ul>
-	<% end %>
+		<% end %>
+	</ul>
 </div>
 
-<%= link_to 'Generate new category', new_category_path %><br>
+<div class="hide_container">
+    <div class="slide_header"><span>產生新類別</span>
+		</div>
+    <div class="content">
+			<%= form_with(model: @category) do |f| %>
+				<%= f.label :name, "Name:" %>
+				<%= f.text_field :name %>
+
+			<%= f.submit "產生" %>
+<% end %>
+	        
+    </div>
+</div>
 
 <%= link_to 'Back to main page', managers_path %>
 
-<div class="hide_container">
-    <div class="slide_header"><span>Expand</span>
-
-    </div>
-    <div class="content">
-        <ul>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-            <li>This is just some random content.</li>
-        </ul>
-    </div>
-</div>
 
 <script type="text/javascript">
 	$(".slide_header").click(function () {
@@ -41,7 +38,7 @@
         //change text of header based on visibility of content div
         $header.text(function () {
             //change text based on condition
-            return $content.is(":visible") ? "Collapse" : "Expand";
+            return $content.is(":visible") ? "收起" : "產生新類別";
         });
     });
 
